@@ -1,4 +1,3 @@
-import java.io.Closeable;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
