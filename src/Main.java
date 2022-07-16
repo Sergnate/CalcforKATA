@@ -2,12 +2,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-
+    
     public static void main(String[] args) {
         Scanner scanstr = new Scanner(System.in);
         String input = scanstr.nextLine();
-        System.out.println(input+"="+Calc(input));}
-
+        System.out.println(input.toUpperCase()+"="+Calc(input));}
+    
     public static String Calc(String input){
         char[] znak = input.toCharArray();
         String[] num = input.split("[-/+*]",2);
@@ -17,8 +17,8 @@ public class Main {
             n1 = Integer.parseInt(num[0]);
             n2 = Integer.parseInt(num[1]);
         } catch (NumberFormatException e) {arabic=false;
-            n1 = Integer.parseInt(String.valueOf(RomanNumeral.romanToArabic(num[0])));
-            n2 = Integer.parseInt(String.valueOf(RomanNumeral.romanToArabic(num[1])));}
+            n1 = Integer.parseInt(String.valueOf(RomNum.romanToArabic(num[0])));
+            n2 = Integer.parseInt(String.valueOf(RomNum.romanToArabic(num[1])));}
         if (n1 < 0 || n1 > 10 || n2 < 0 || n2 > 10) {
             throw new InputMismatchException("throws Exception //т.к. формат математической операции не удовлетворяет заданию");
         }
@@ -43,8 +43,7 @@ public class Main {
                     break; }
         }
         if(!arabic) {
-            return RomanNumeral.arabicToRoman(Integer.parseInt(String.valueOf(rez)));} else {
-            return String.valueOf(rez);}
+            return RomNum.arabicToRoman(Integer.parseInt(String.valueOf(rez)));} else {return String.valueOf(rez);}
     }
 }
 
