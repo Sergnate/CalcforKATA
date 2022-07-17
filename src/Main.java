@@ -47,7 +47,7 @@ public class Main {
                     try {
                         rez = n1 / n2;
                     } catch (ArithmeticException e) {
-                        System.out.println("На ноль делить нельзя");
+                     throw new ArithmeticException("На ноль делить нельзя!");
                     }
                break;
 
