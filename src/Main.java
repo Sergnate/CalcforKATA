@@ -7,7 +7,7 @@ public class Main {
         Scanner scanstr = new Scanner(System.in);
         String input = scanstr.nextLine();
         if(input.length()>=3) {
-            System.out.println(input.toUpperCase()+"="+Calc(input));
+            System.out.println(input.toUpperCase()+" = "+Calc(input));
         } else throw new IllegalArgumentException("throws Exception //т.к. строка не является математической операцией");
     }
     
@@ -21,12 +21,12 @@ public class Main {
         int n1,n2,rez = 0;
         boolean arabic=true;
         try {
-            n1 = Integer.parseInt(num[0]);
-            n2 = Integer.parseInt(num[1]);
+            n1 = Integer.parseInt(num[0].trim());
+            n2 = Integer.parseInt(num[1].trim());
         } catch (NumberFormatException e) {
             arabic=false;
-            n1 = RomNum.romanToArabic(num[0]);
-            n2 = RomNum.romanToArabic(num[1]); }
+            n1 = RomNum.romanToArabic(num[0].trim());
+            n2 = RomNum.romanToArabic(num[1].trim()); }
 
         if ((n1 < 0) || ((n1 > 10) || (n2 < 0)) || (n2 > 10)) {
             throw new InputMismatchException("throws Exception //т.к. формат введенных чисел не удовлетворяет заданию");
