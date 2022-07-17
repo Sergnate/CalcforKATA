@@ -10,7 +10,6 @@ public class Main {
             System.out.println(input.toUpperCase()+" = "+Calc(input));
         } else throw new IllegalArgumentException("throws Exception //т.к. строка не является математической операцией");
     }
-    
     public static String Calc(String input) throws IllegalArgumentException {
         char[] znak = input.toCharArray();
         String[] num = input.split("[-/+*]",3);
@@ -25,8 +24,8 @@ public class Main {
             n2 = Integer.parseInt(num[1].trim());
         } catch (NumberFormatException e) {
             arabic=false;
-            n1 = RomNum.romanToArabic(num[0].trim());
-            n2 = RomNum.romanToArabic(num[1].trim()); }
+            n1 = Romes.toArabic(num[0].trim());
+            n2 = Romes.toArabic(num[1].trim()); }
 
         if ((n1 < 0) || ((n1 > 10) || (n2 < 0)) || (n2 > 10)) {
             throw new InputMismatchException("throws Exception //т.к. формат введенных чисел не удовлетворяет заданию");
@@ -47,14 +46,14 @@ public class Main {
                     try {
                         rez = n1 / n2;
                     } catch (ArithmeticException e) {
-                     throw new ArithmeticException("На ноль делить нельзя!");
+                        throw new ArithmeticException("На ноль делить нельзя!");
                     }
                break;
 
                 }
             }
         if(!arabic) {
-            return RomNum.arabicToRoman(rez);} else {return String.valueOf(rez);}
+            return Romes.toRoman(rez);} else {return String.valueOf(rez);}
     }
 }
 
