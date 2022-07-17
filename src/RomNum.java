@@ -54,8 +54,8 @@ public enum RomNum {
                 i++;
             }
         }
-        if (romanNumeral.length() >0) {
-            throw new IllegalArgumentException("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
-            }
+       if (romanNumeral.length() >0) {
+           throw new IllegalArgumentException("throws Exception //т.к. используются одновременно разные системы счисления");
+           }
         return result;}
 }
